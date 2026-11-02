@@ -1,0 +1,33 @@
+
+import random
+
+first_names = [
+    "Alex", "Jordan", "Taylor", "Morgan",
+    "Riley", "Jamie", "Alejandro", "Avery",
+    "Charlie", "Dylan", "Skyler", "Blake", "Kay", "Ping"
+]
+
+last_names = [
+    "Smith", "Johnson", "Brown", "Wilson",
+    "Davis", "Miller", "Anderson", "Taylor",
+    "Thomas", "Jackson", "White", "Bull", 
+    "Pito", "Aura", "Pinky", "Pong" 
+]
+
+def generate_name():
+    first = random.choice(first_names)
+    last = random.choice(last_names)
+    return first + " " + last
+
+print("=== Random Name Generator ===")
+
+while True:
+    user_input = input(
+        "Press Enter to generate a name (or type 'q' to quit): "
+    )
+
+    if user_input.strip().lower() == "q":
+        print("Goodbye!")
+        break
+
+    print("Generated name:", generate_name())
