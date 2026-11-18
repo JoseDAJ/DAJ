@@ -10,24 +10,29 @@ first_names = [
 last_names = [
     "Smith", "Johnson", "Brown", "Wilson",
     "Davis", "Miller", "Anderson", "Taylor",
-    "Thomas", "Jackson", "White", "Bull", 
-    "Pito", "Aura", "Pinky", "Pong" 
+    "Thomas", "Jackson", "White", "Bull",
+    "Pito", "Aura", "Pinky", "Pong"
 ]
 
 def generate_name():
-    first = random.choice(first_names)
-    last = random.choice(last_names)
-    return first + " " + last
+    first = random.choice(first_names) #picks a name from the first names list and saves it
+    last = random.choice(last_names) #picks a name from the last names list and saves it
+    return first + " " + last #add toghether the two saved names and makes a full name
 
-print("=== Random Name Generator ===")
+print("=== Random Name Generator ===") #tells user the name of the program
 
-while True:
+count = 0
+
+while True: #loop
     user_input = input(
-        "Press Enter to generate a name (or type 'q' to quit): "
+        "Press Enter to generate a name (or type 'q' to quit): " #tells user how to use and end the program
     )
 
-    if user_input.strip().lower() == "q":
-        print("Goodbye!")
+    if user_input.strip().lower() == "q": #if user inputs q instead of enter it will stop the program
+        print("Goodbye!") #tells user goodbye after user ends program
+        print("Names generated:", count)# tells user how many times they used the code
         break
 
-    print("Generated name:", generate_name())
+    count = count + 1
+
+    print("Generated name:", generate_name()) #tells user the generated name
